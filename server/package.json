@@ -1,27 +1,15 @@
 {
-  "name": "hackathon-2017-server",
-  "version": "0.1.0",
-  "description": "Server APIs",
+  "name": "onapp-ui",
+  "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "pm2 start ./server.js",
-    "stop": "pm2 stop ./server.js",
-    "local": "node ./server.js",
-    "dev": "node-dev ./",
-    "debug": "node-debug ./"
+    "local": "node ./server.js"
   },
-  "author": "Noam Shay",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "express": "^4.15.2",
-    "firebase-admin": "^4.1.3",
-    "node-schedule": "^1.2.1",
-    "pg": "^6.1.5"
+    "express": "^4.15.2"
   },
   "devDependencies": {
-    "node-debug": "^0.1.0",
-    "node-dev": "^3.1.3",
-    "supervisor": "~0.12.0"
   }
 }
