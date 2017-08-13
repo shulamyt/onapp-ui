@@ -1,8 +1,27 @@
 .setupList {
 	.setupItem {
 	    background-color: white;
-	    .button {
+	    margin-bottom: 15px;
+	    width: 900px;
+		height: 40px;
+		line-height: 40px;
+		&>div{
+			float: left;
+		}
+	    .name{
+	    	width: 350px;
 	    	
 	    }
+	    .buttons{
+	    	float: right;
+	    	&>div{
+				float: left;
+			}
+	    }
+		&:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
 	}
 }

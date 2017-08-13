@@ -23,12 +23,12 @@ class SetupList extends React.Component {
 		return (
 			<div key={setupItem.name} className="setupItem">
 				<div>+</div>
-				<div>{setupItem.name}</div>
-				<div>Last Modified</div>
-				<div>{setupItem.lastModified}</div>
-				<div className="button" onClick={this.handleDelete.bind(this, setupItem)}>Delete</div>
-				<div className="button" onClick={this.handleConfigure.bind(this, setupItem)}>Configure</div>
-				<div className="button" onClick={this.handleDeploy.bind(this, setupItem)}>Deploy</div>
+				<div className="name">{setupItem.name}</div>
+				<div className="buttons">
+					<div className="button" onClick={this.handleDelete.bind(this, setupItem)}>Delete</div>
+					<div className="button" onClick={this.handleConfigure.bind(this, setupItem)}>Configure</div>
+					<div className="button" onClick={this.handleDeploy.bind(this, setupItem)}>Deploy</div>
+				</div>
 			</div>
 		);
 	};
