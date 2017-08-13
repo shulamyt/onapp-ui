@@ -1,4 +1,5 @@
 import React from 'react';
+import './setup-list.scss';
 
 class SetupList extends React.Component {
 
@@ -20,14 +21,14 @@ class SetupList extends React.Component {
 
 	createSetupItem(setupItem){
 		return (
-			<div key={setupItem.name}>
+			<div key={setupItem.name} className="setupItem">
 				<div>+</div>
 				<div>{setupItem.name}</div>
 				<div>Last Modified</div>
 				<div>{setupItem.lastModified}</div>
-				<div onClick={this.handleDelete.bind(this, setupItem)}>Delete</div>
-				<div onClick={this.handleConfigure.bind(this, setupItem)}>Configure</div>
-				<div onClick={this.handleDeploy.bind(this, setupItem)}>Deploy</div>
+				<div className="button" onClick={this.handleDelete.bind(this, setupItem)}>Delete</div>
+				<div className="button" onClick={this.handleConfigure.bind(this, setupItem)}>Configure</div>
+				<div className="button" onClick={this.handleDeploy.bind(this, setupItem)}>Deploy</div>
 			</div>
 		);
 	};
@@ -56,7 +57,7 @@ class SetupList extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="setupList">
 				<div>Choose Setup:</div>
 				{this.setupList()}
 			</div>

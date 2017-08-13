@@ -1,4 +1,5 @@
 var path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: './src/index.js',
@@ -13,7 +14,20 @@ module.exports = {
 				use: ['babel-loader'],
 				exclude: /node_modules/
 			},
+			{
+				test: /\.(css|scss)$/,
+				use: ExtractTextPlugin.extract({
+				//fallback: 'style-loader',
+					use: [
+						{ loader: 'css-loader', query: { sourceMaps: true } },
+						{ loader: 'sass-loader', query: { sourceMaps: true } }
+					]
+				})
+			}
 		]
 	},
+	plugins: [
+		new ExtractTextPlugin("onap.css")
+	],
 	devtool: 'source-map'
 };
