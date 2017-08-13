@@ -24,6 +24,7 @@ class SetupList extends React.Component {
 			<div key={setupItem.name} className="setupItem">
 				<div>+</div>
 				<div className="name">{setupItem.name}</div>
+				<div>Last Modified {setupItem.lastModified}</div>
 				<div className="buttons">
 					<div className="button" onClick={this.handleDelete.bind(this, setupItem)}>Delete</div>
 					<div className="button" onClick={this.handleConfigure.bind(this, setupItem)}>Configure</div>
