@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 
 class SetupList extends React.Component {
 
@@ -38,7 +37,8 @@ class SetupList extends React.Component {
 	};
 
 	handleConfigure(setupItem){
-		console.log("handleConfigure:" + setupItem.name);		
+		console.log("handleConfigure:" + setupItem.name);
+		this.props.history.push('/setupConfiguration/' + setupItem.id);		
 	};
 
 	handleDeploy(setupItem){

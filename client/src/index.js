@@ -4,6 +4,8 @@ import {BrowserRouter} from 'react-router-dom';
 import {renderRoutes} from 'react-router-config';
 import Login from './login';
 import SetupList from './setup-list';
+import SetupConfiguration from './setup-configuration';
+
 
 
 
@@ -20,6 +22,10 @@ const routes = [
 	{
 		path: '/setupList',
 		component: SetupList
+	},
+	{
+		path: '/setupConfiguration/:setupId',
+		component: SetupConfiguration
 	}
 ]
 
