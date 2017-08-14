@@ -20,7 +20,15 @@ new WebpackDevServer(webpack(config), {
 		watchOptions: {
 			aggregateTimeout: 100,
 			ignored: /node_modules/
-		}
+		},
+		proxy:{
+			'/services': {
+				target: 'http://localhost:4000',
+				pathRewrite: {
+					'/services': ''
+				}
+			}
+    	}
 	}).listen(port, host, function (err, result) {
 	if (err) {
 		console.log(err);

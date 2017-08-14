@@ -16,7 +16,7 @@ class SetupList extends React.Component {
 	};
 
 	fetchSetupItems(){
-		RestService.get("http://localhost:4000/setups").then(function(setupItems) {
+		RestService.get("/services/setups").then(function(setupItems) {
 			this.setState({setupItems});
 		}.bind(this));
 	};
@@ -42,7 +42,7 @@ class SetupList extends React.Component {
 
 	handleDelete(setupItem){
 		console.log("handleDelete:" + setupItem.name);
-		RestService.delete1("http://localhost:4000/setups/" + setupItem.id).then(function(setupItems) {
+		RestService.delete1("/services/setups/" + setupItem.id).then(function(setupItems) {
 			this.fetchSetupItems();
 		}.bind(this));
 	};
