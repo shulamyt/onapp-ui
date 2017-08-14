@@ -1,18 +1,21 @@
 import React from 'react';
 import './setup-list.scss';
+import * as RestService from './../res/rest-utilities';
 
 class SetupList extends React.Component {
 
 	constructor(props) {
 		super(props);
 		this.state = {
-			setupItems: [
-				{id:"1", name: "ONAP Release 1.0.0", lastModified:"10.02.2017"},
-				{id:"2", name: "ONAP last stable 1.1", lastModified:"10.02.2017"},
-				{id:"3", name: "ONAP All Master", lastModified:"10.02.2017"},
-				{id:"4", name: "AEE 1.1 SD-WAN", lastModified:"10.02.2017"}
-			]
+			setupItems: []
 		};
+	};
+
+	componentDidMount(){
+		let self = this;
+		RestService.get("http://localhost:4000/setups").then(function(setupItems) {
+			self.setState({setupItems});
+		});
 	};
 
 	getSetupItems(){
