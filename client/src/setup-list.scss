@@ -1,3 +1,9 @@
+@mixin center-vertical-div() {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%); 
+}
+
 .setupList {
 	.setupItem {
 	    background-color: white;
@@ -8,14 +14,24 @@
 		&>div{
 			float: left;
 		}
-	    .name{
+	    .name {
 	    	width: 350px;
 	    	
 	    }
-	    .buttons{
-	    	float: right;
-	    	&>div{
+	    .buttons {
+			float: right;
+			@include center-vertical-div();
+			&>div{
 				float: left;
+			}
+			.button {
+				font-size: 12px;
+				border: 1px solid #E4E4E4;
+				width: 59px;
+				height: 29px;
+				line-height: 29px;
+				text-align: center;
+				margin-right: 5px;
 			}
 	    }
 		&:after {
@@ -25,3 +41,6 @@
 		}
 	}
 }
+
+
+

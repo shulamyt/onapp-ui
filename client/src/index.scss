@@ -3,6 +3,12 @@ body{
 	font-family: Arial;
 }
 
+@mixin center-vertical-div() {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%); 
+}
+
 .onap{
 
 }
