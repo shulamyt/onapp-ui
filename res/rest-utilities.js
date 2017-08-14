@@ -15,6 +15,11 @@ export function get(url, body, config) {
 	return httpSend(url, body, getConfig);
 }
 
+export function delete1(url, body, config) {
+	let getConfig = Object.assign({}, config, {method: 'DELETE'});
+	return httpSend(url, body, getConfig);
+}
+
 export function syncGet(url, body, config) {
 	return syncGetRequest(url, body, config);
 }

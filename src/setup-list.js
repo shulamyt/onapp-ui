@@ -12,10 +12,13 @@ class SetupList extends React.Component {
 	};
 
 	componentDidMount(){
-		let self = this;
+		this.fetchSetupItems();
+	};
+
+	fetchSetupItems(){
 		RestService.get("http://localhost:4000/setups").then(function(setupItems) {
-			self.setState({setupItems});
-		});
+			this.setState({setupItems});
+		}.bind(this));
 	};
 
 	getSetupItems(){
@@ -39,6 +42,9 @@ class SetupList extends React.Component {
 
 	handleDelete(setupItem){
 		console.log("handleDelete:" + setupItem.name);
+		RestService.delete1("http://localhost:4000/setups/" + setupItem.id).then(function(setupItems) {
+			this.fetchSetupItems();
+		}.bind(this));
 	};
 
 	handleConfigure(setupItem){
