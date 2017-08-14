@@ -4,7 +4,17 @@
 	transform: translateY(-50%); 
 }
 
+@mixin center-horizontal-div() {
+	position: relative;
+	float: left;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+    
+
 .setupList {
+	@include center-horizontal-div();
 	.setupItem {
 	    background-color: white;
 	    margin-bottom: 15px;
