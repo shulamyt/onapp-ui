@@ -1,0 +1,8 @@
+{
+	"setups": [
+		{"id":"1", "name": "ONAP Release 1.0.0",   "lastModified":"10.02.2017"},
+		{"id":"2", "name": "ONAP last stable 1.1", "lastModified":"10.02.2017"},
+		{"id":"3", "name": "ONAP All Master",      "lastModified":"10.02.2017"},
+		{"id":"4", "name": "AEE 1.1 SD-WAN",       "lastModified":"10.02.2017"}
+	]
+}

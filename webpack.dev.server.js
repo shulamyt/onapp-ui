@@ -25,6 +25,5 @@ new WebpackDevServer(webpack(config), {
 	if (err) {
 		console.log(err);
 	}
-	http://localhost:8080/
 	console.log('http://' + host + ':' + port + '/');
 });
