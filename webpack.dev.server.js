@@ -9,6 +9,16 @@ new WebpackDevServer(webpack(config), {
 		https: false,
 		stats: 'verbose',
 		compress: true,
+		historyApiFallback: {
+			rewrites: [
+				{
+					from: /^\/search\/.*$/,
+					to: function() {
+						return 'index.html';
+					}
+				}
+			]
+		},
 		clientLogLevel: 'none',
 		contentBase: process.cwd(),
 		watchContentBase: true,
