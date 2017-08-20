@@ -1,17 +1,49 @@
 {
-	"setups": [
-		{"id":"1", "name": "ONAP Release 1.0.0",   "lastModified":"10.02.2017"},
-		{"id":"2", "name": "ONAP last stable 1.1", "lastModified":"10.02.2017"},
-		{"id":"3", "name": "ONAP All Master",      "lastModified":"10.02.2017"},
-		{"id":"4", "name": "AEE 1.1 SD-WAN",       "lastModified":"10.02.2017"}
-	],
-	"deployableOptionsItems": [
-		{"name": "Close Loop"},
-		{"name": "A&AI"},
-		{"name": "SO"},
-		{"name": "VID"},
-		{"name": "SDS"},
-		{"name": "SDNC"},
-		{"name": "APPC"}
-	]
+  "setups": [
+    {
+      "id": "2",
+      "name": "ONAP last stable 1.1",
+      "lastModified": "10.02.2017"
+    },
+    {
+      "id": "3",
+      "name": "ONAP All Master",
+      "lastModified": "10.02.2017"
+    },
+    {
+      "id": "4",
+      "name": "AEE 1.1 SD-WAN",
+      "lastModified": "10.02.2017"
+    }
+  ],
+  "deployableOptionsItems": [
+    {
+      "id": "Close Loop",
+      "name": "Close Loop"
+    },
+    {
+      "id": "A&AI",
+      "name": "A&AI"
+    },
+    {
+      "id": "SO",
+      "name": "SO"
+    },
+    {
+      "id": "VID",
+      "name": "VID"
+    },
+    {
+      "id": "SDS",
+      "name": "SDS"
+    },
+    {
+      "id": "SDNC",
+      "name": "SDNC"
+    },
+    {
+      "id": "APPC",
+      "name": "APPC"
+    }
+  ]
 }

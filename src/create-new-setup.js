@@ -1,5 +1,8 @@
 import React from 'react';
+import './create-new-setup.scss';
 import * as RestService from './../res/rest-utilities';
+import remove from 'lodash/remove';
+import find from 'lodash/find';
 
 class CreateNewSetup extends React.Component {
 
@@ -8,15 +11,6 @@ class CreateNewSetup extends React.Component {
 		this.state = {
 			name: '',
 			password: '',
-			// deployableOptionsItems: [
-			// 	{name: 'Close Loop'},
-			// 	{name: 'A&AI'},
-			// 	{name: 'SO'},
-			// 	{name: 'VID'},
-			// 	{name: 'SDS'},
-			// 	{name: 'SDNC'},
-			// 	{name: 'APPC'}
-			// ],
 			deployableOptionsItems: [],
 			selectedDeployableOptions: []
 		};
@@ -54,12 +48,35 @@ class CreateNewSetup extends React.Component {
 		return this.state.deployableOptionsItems;
 	};
 
-	createDeployableOptionItem(deployableOptionItem){
+	createDeployableOptionItem(deployableOptionItem){ 
+		let className = "deployableOptionItem";
+		if(this.isSelected(deployableOptionItem)){
+			className = className + " selected";
+		}
 		return (
-			<div key={deployableOptionItem.name} className="deployableOptionItem">
+			<div key={deployableOptionItem.id} className={className} onClick={this.onClickDeployableOptionItem.bind(this, deployableOptionItem)}>
 				<div className="name">{deployableOptionItem.name}</div>
 			</div>
 		);
+	};
+
+	isSelected(deployableOptionItem){
+		let selectedDeployableOptions = this.state.selectedDeployableOptions;
+		let findedItem = find(selectedDeployableOptions, function(item){
+			return deployableOptionItem.id == item.id;
+		});
+		return findedItem != undefined;
+	};
+
+	onClickDeployableOptionItem(deployableOptionItem){
+		let selectedDeployableOptions = this.state.selectedDeployableOptions;
+		let removedItem = remove(selectedDeployableOptions, function(item){
+			return item.id == deployableOptionItem.id;
+		});
+		if(removedItem.length == 0){
+			selectedDeployableOptions.push(deployableOptionItem);
+		}
+		this.setState({selectedDeployableOptions});
 	};
 
 	setupDeployableOptions(){
@@ -73,7 +90,7 @@ class CreateNewSetup extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div className="createNewSetup">
 				<div>Create new Setup</div>
 				<label>Setup Name:<input type="text" value={this.state.name} onChange={this.handleChange.bind(this, 'name')} /></label>
 				<div className="addExternalComponentButton" onClick={this.openAddExternalComponentPopup.bind(this)}>Add External Component</div>
