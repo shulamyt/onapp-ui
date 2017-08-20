@@ -4,5 +4,14 @@
 		{"id":"2", "name": "ONAP last stable 1.1", "lastModified":"10.02.2017"},
 		{"id":"3", "name": "ONAP All Master",      "lastModified":"10.02.2017"},
 		{"id":"4", "name": "AEE 1.1 SD-WAN",       "lastModified":"10.02.2017"}
+	],
+	"deployableOptionsItems": [
+		{"name": "Close Loop"},
+		{"name": "A&AI"},
+		{"name": "SO"},
+		{"name": "VID"},
+		{"name": "SDS"},
+		{"name": "SDNC"},
+		{"name": "APPC"}
 	]
 }
