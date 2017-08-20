@@ -56,6 +56,12 @@ class SetupList extends React.Component {
 		console.log("handleDeploy:" + setupItem.name);
 	};
 
+
+	handleCreateNew(){
+		this.props.history.push('/createNewSetup');
+	};
+	
+
 	setupList(){
 		let setupItems = this.getSetupItems().map((setupItem) =>	
 			this.createSetupItem(setupItem)
@@ -68,7 +74,10 @@ class SetupList extends React.Component {
 	render() {
 		return (
 			<div className="setupList">
-				<div>Choose Setup:</div>
+				<div className="header">
+					<div className="title">Choose Setup</div>
+					<div className="createNew" onClick={this.handleCreateNew.bind(this)}>Create new</div>
+				</div>
 				{this.setupList()}
 			</div>
 		);

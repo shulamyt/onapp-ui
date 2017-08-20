@@ -11,10 +11,37 @@
 	transform: translate(-50%);
 }
 
+@mixin clearfix() {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
     
 
 .setupList {
 	@include center-horizontal-div();
+	&>.header {
+		margin-bottom: 10px;
+		margin-top: 10px;
+		.title{
+			float: left;
+			line-height: 29px;
+		}
+		.createNew{
+			float: right;
+			width: 59px;
+			height: 29px;
+			line-height: 29px;
+			text-align: center;
+			border: 1px solid #7FC1DE;
+			background-color: #199ED8;
+			color: white;
+		}
+		@include clearfix();
+	}
 	.setupItem {
 	    background-color: white;
 	    margin-bottom: 15px;
@@ -28,6 +55,7 @@
 	    	width: 350px;
 	    	
 	    }
+	    
 	    .buttons {
 			float: right;
 			@include center-vertical-div();
@@ -44,11 +72,7 @@
 				margin-right: 5px;
 			}
 	    }
-		&:after {
-			content: '';
-			display: block;
-			clear: both;
-		}
+		@include clearfix();
 	}
 }
 

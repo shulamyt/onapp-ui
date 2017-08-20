@@ -6,6 +6,8 @@ import './index.scss';
 import Login from './login';
 import SetupList from './setup-list';
 import SetupConfiguration from './setup-configuration';
+import CreateNewSetup from './create-new-setup';
+
 
 
 
@@ -27,6 +29,10 @@ const routes = [
 	{
 		path: '/setupConfiguration/:setupId',
 		component: SetupConfiguration
+	},
+	{
+		path: '/createNewSetup',
+		component: CreateNewSetup
 	}
 ]
 
